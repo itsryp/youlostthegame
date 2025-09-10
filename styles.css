@@ -63,3 +63,23 @@ tr {
 footer {
     opacity: .5;
 }
+
+.clear-button {
+    z-index: 2;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    aspect-ratio: 1;
+    padding: 10px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 100px;
+    font-family: "special gothic expanded one", sans-serif;
+    transition: scale .25s;
+    color: #000000;
+    text-align: center;
+}
+
+.clear-button:active {
+    scale: .9;
+}
