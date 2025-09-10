@@ -8,17 +8,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cossette+Titre:wght@400;700&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 </head>
 <body>
     <header>
         <script src="script.js"></script>
-        <h1>looks like you lost "the game" again 😔</h1>
-        <h2>save this run?? 📝</h2>
+        <h1>looks like you lost "the game"... 😔</h1>
+        <h2 class="days-lasted">you lasted 0 days! 👏</h2>
+        <h3>log this run? 📝</h3>
         <div class="buttons">
-            <button class="button yesbutton" onclick="addtolog()">yes please.. 🙏</button>
+            <button class="button yesbutton" onclick="addtolog()">yes please! 🙏</button>
             <!-- <button class="button nobutton">nah.</button> -->
         </div>
     </header>
@@ -41,12 +42,26 @@
                 <td>N/A</td>
             </tr> -->
         </table>
-        <button class="clear-button" onclick="clearlogs()">
-            🗑️
-        </button>
+        <div class="other-buttons">
+            <!-- <a class="other-button" href="https://github.com/itsryp/youlostthegame">
+                <img src="github-mark.svg" alt="">
+            </a> -->
+            <!-- <button class="other-button" href="https://github.com/itsryp/youlostthegame">
+                <img src="github-mark.svg" alt="">
+            </button> -->
+            <button class="other-button lightmode-button" onclick="togglelightmode()">
+                ☀️
+            </button>
+            <button class="other-button clear-button" onclick="clearlogs()">
+                🗑️
+            </button>
+        </div>
     </main>
     <footer>
-        make sure you bookmark ⭐ this page so you can come back to it when you lose again!!
+        make sure you bookmark ⭐ this page so you can come back to it if you lose again!
+        <br>
+        <br>
+        <a href="https://github.com/itsryp/youlostthegame"><u>made with ❤️ by ryp</u></a>
     </footer>
 </body>
 </html>

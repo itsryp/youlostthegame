@@ -1,10 +1,21 @@
 body {
     background: black;
-    color: white;
+    color: white !important;
     font-family: "special gothic expanded one", sans-serif;
     text-align: center;
     max-width: 400px;
     justify-self: center;
+    transition: background-color 1s, color 1s;
+}
+
+.light-mode {
+  background-color: white;
+  color: black !important;
+}
+
+.light-mode .button {
+    background-color: black;
+    color: white;
 }
 
 header {
@@ -23,24 +34,26 @@ header {
     justify-content: center;
 }
 
+button {
+    font-family: "special gothic expanded one", sans-serif;
+}
+
 .button {
     padding: 10px;
     font-size: 20px;
     width: 100%;
     border: 0;
     border-radius: 100px;
-    font-family: "special gothic expanded one", sans-serif;
-    transition: scale .25s;
+    transition: scale .25s, background-color 1s, color 1s;
     color: #000000;
+}
+
+.button.inactive {
+    opacity: .25;
 }
 
 .button:active {
     scale: .9;
-}
-
-.nobutton {
-    background: black;
-    color: white;
 }
 
 main {
@@ -64,22 +77,44 @@ footer {
     opacity: .5;
 }
 
-.clear-button {
+.other-buttons {
     z-index: 2;
     position: fixed;
     bottom: 10px;
     right: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.other-button {
+    width: 48px !important;
+    height: 48px !important;
     aspect-ratio: 1;
     padding: 10px;
     font-size: 20px;
     border: 0;
     border-radius: 100px;
-    font-family: "special gothic expanded one", sans-serif;
     transition: scale .25s;
-    color: #000000;
     text-align: center;
+    align-items: center;
 }
 
-.clear-button:active {
+.light-mode .other-button {
+    background-color: black;
+    color: white;
+}
+
+.other-button img {
+    width: 100%;
+    height: 100%;
+}
+
+.other-button:active {
     scale: .9;
+}
+
+a {
+    color: inherit;
+    outline: none;
 }

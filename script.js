@@ -1,4 +1,5 @@
 let last = null;
+let lightmode = false;
 
 addEventListener("load", (event) => {
     const ls = localStorage;
@@ -7,6 +8,12 @@ addEventListener("load", (event) => {
         const entry = logdata[i];
         addentry(entry)
     }
+    if (last && last.time) {
+        if (((Date.now() - last.time) / 1000) < 86400) {
+            document.querySelector('.yesbutton').classList.add('inactive');
+        }
+    }
+    document.querySelector('.days-lasted').innerHTML = `you lasted ${last != null ? Math.round(((Date.now() - last.time) / 1000) / 86400) : 0} days! 👏`;
 });
 
 function addtolog() {
@@ -18,7 +25,7 @@ function addtolog() {
     }
     const ls = localStorage;
     let logdata = JSON.parse(ls.getItem('logdata')) || [];
-    const reasonstring = prompt("how did you lose??")
+    const reasonstring = prompt("who/what made you lose?")
     if (!reasonstring)
         return;
     let newentry = {
@@ -47,7 +54,7 @@ function addentry(entry) {
 
 function clearlogs() {
     if (localStorage.getItem('logdata') == null) {
-        alert('you dont have any logs');
+        alert('no saved data');
         return;
     } else {
         let confirmresult = confirm('reset data?');
@@ -60,5 +67,18 @@ function clearlogs() {
                 return;
         } else
             return;
+    }
+}
+
+function togglelightmode() {
+    lightmode = !lightmode;
+    var body = document.body;
+    var button = document.querySelector('.lightmode-button');
+    if (lightmode) {
+        body.classList.add('light-mode');
+        button.innerHTML = "🌙"
+    } else {
+        body.classList.remove('light-mode');
+        button.innerHTML = "☀️"
     }
 }
